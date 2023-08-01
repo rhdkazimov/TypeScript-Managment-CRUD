@@ -1,0 +1,88 @@
+.login-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 180px;
+}
+
+.login-inputs{
+  display: flex;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root{
+  margin-top: 10px !important;
+  width: 29.5% !important;
+}
+
+.notfound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  color: red;
+  font-size: 55px;
+  border: 2px solid black;
+}
+
+.userlist .logout{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.userlist .logout img{
+  width: 100px;
+}
+
+#logout-btn {
+  width: 200px !important;
+  height: 50px !important;
+}
+
+.datas{
+  display: flex;
+  justify-content: center;
+}
+
+.userCard {
+  margin-right: 30px;
+  width: 300px;
+}
+.userImg {
+  height: 200px;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  font-weight: 900 !important;
+  font-size: 18px !important;
+}
+
+.userEmail{
+  margin-left: 15px !important;
+}
+
+.userEditBox{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.userEditInput {
+  margin-top: 20px;
+font-size: 25px;
+  width: 200px;
+  height: 50px;
+}
+
+.userEditBtn{
+  margin-top: 30px !important;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(43, 109, 253) !important;
+  color: #fff !important;
+}

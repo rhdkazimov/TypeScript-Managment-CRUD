@@ -20,7 +20,7 @@ export class UserService extends HttpClient{
     }
 
     async uptadeUserById(id:number|string,body:IEditUser){
-        return await this.post(`edit/${id}`,body)
+        return await this.put(`edit/${id}`,body)
     }
 
     async createNewUser(body:INewUser){

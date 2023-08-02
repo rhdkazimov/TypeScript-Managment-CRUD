@@ -29,7 +29,7 @@ const DUsersDataList =
     age :25,
     password:"test",
     roles: "Director"   
-},
+}
 ]
 
 const DLoginnedUserData = {

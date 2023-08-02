@@ -1,6 +1,7 @@
 import { EUserRoles } from "./enums";
 
 export interface IUserInfo {
+    _id:string
     id:number|string,
     firstName:string,
     lastName:string,

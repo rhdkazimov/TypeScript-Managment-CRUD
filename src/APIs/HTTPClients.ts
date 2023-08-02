@@ -10,8 +10,8 @@ export class HttpClient {
         return await axios.get(`${this.baseUrl}/${endpoint}`);
     }
 
-    async put(endpoint:string,id:number|string){
-        return await axios.get(`${this.baseUrl}/${endpoint}/${id}`);
+    async put(endpoint:string,body:any){
+        return await axios.put(`${this.baseUrl}/${endpoint}`,body);
     }
 
     async post(endpoint:string,body:any){

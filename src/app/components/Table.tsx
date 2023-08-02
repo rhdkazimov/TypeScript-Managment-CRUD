@@ -58,8 +58,8 @@ export const BasicTable: React.FC<IProps> = ({ users }) => {
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.roles}</TableCell>
               <TableCell align="right">
-                <Button onClick={()=> handleUserEdit(user.id)}>Edit</Button>
-                <Button onClick={() => handleUserDelete(idx)}>
+                <Button onClick={()=> handleUserEdit(user._id)}>Edit</Button>
+                <Button onClick={() => handleUserDelete(user._id)}>
                   Delete
                 </Button>
               </TableCell>

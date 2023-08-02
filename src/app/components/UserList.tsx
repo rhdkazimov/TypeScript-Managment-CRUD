@@ -5,6 +5,7 @@ import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes/consts";
 import { BasicTable } from "./Table";
+import { FadeLoader } from "react-spinners";
 
 export const UserList: React.FC = () => {
   const { usersDataList,reloadPage,setReloadPage} = useUser();
@@ -39,8 +40,8 @@ export const UserList: React.FC = () => {
         <Button variant="contained" className="newUserBtn" onClick={handleCreateNewUser}>Add New User</Button>
         </div>
         {
-        usersDataList &&
-           <BasicTable users={usersDataList}/>
+        usersDataList ?
+           <BasicTable users={usersDataList}/>:<FadeLoader className="loader" color="#36d7b7" />
         }
       </div>
     </div>

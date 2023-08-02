@@ -20,8 +20,7 @@ export const UserEdit:React.FC = () => {
   const {userService} = useService();
   const [editUserData,setEditUserData] = React.useState(initialEditUserData);
   const {mutateEditUserApplication}= useUser();
-
-  useQuery(EQueryKeys.USER_EDIT,()=>userService.getUserById(editUserId).then((data)=>setEditUserData(data.data.User)))
+  useQuery(EQueryKeys.USER_EDIT,()=>userService.getUserById(editUserId).then((data)=>setEditUserData(data.data)))
 
   const handleEditInputChanges = React.useCallback(
     ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => {

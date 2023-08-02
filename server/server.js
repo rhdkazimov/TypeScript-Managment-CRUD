@@ -1,8 +1,12 @@
 const express = require("express");
+require("./data/config")
+const User = require("./data/user")
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { DUserData,DUsersDataList,DLoginnedUserData } = require("./data/users");
+
 const PORT = process.env.PORT | 3001;
+
 
 const app = express();
 
@@ -13,39 +17,43 @@ app.get("/", (_, res) => {
   res.json({ systemMessage: "Working,Not Problem" });
 });
 
-app.get("/users", (_, res) => {
-    res.json(DUsersDataList);
+app.get("/users", async (_, res) => {
+  const data = await User.find();
+    res.json(data);
   });
 
-app.get("/delete/:id",(req,res)=>{
-  DUsersDataList.splice(req.params.id,1)
-  res.json({Message:`${DUsersDataList.find(x=>x.id===req.params.id)?.firstName} - user is deleted db`})
+app.get("/delete/:id",async (req,res)=>{
+  let result =await User.deleteOne({_id:req.params.id});
+  res.send(result)
 })
 
-app.get("/users/:id",(req,res)=>{
-  res.json({User:DUsersDataList.find(x=>x.id===req.params.id)})
+app.get("/users/:id",async (req,res)=>{
+  const data = await User.findOne({_id:req.params.id});
+  if(data){
+    res.json(data);}
+    else{
+      res.json({Message:"No Data Founded"})
+    }
 })
 
-app.post("/edit/:id",(req,res)=>{
-  const editUser = DUsersDataList.find(x=>x.id===req.params.id);
-  editUser.firstName = req.body.firstName;
-  editUser.lastName = req.body.lastName;
-  editUser.email = req.body.email;
-  res.json({Message:"User Updated"})
+app.put("/edit/:id",async (req,res)=>{
+  const data = await User.updateOne({_id:req.params.id},{$set:req.body});
+  res.json(result)
 })
 
-app.post("/user/create",(req,res)=>{
-  const NewUserData = {
-    id:`${DUsersDataList.length+1}`,
-    firstName: `${req.body.firstName}`,
-    lastName:`${req.body.lastName}`,
-    email:`${req.body.email}`,
-    age : 0,
-    password:"shifre",
-    roles: `${req.body.roles}`
-  }
-  DUsersDataList.push(NewUserData)
-  res.json({Message:"User Created"})
+app.post("/user/create",async (req,res)=>{
+ let newUser = {
+   id:"4",
+   firstName: `${req.body.firstName}`,
+   lastName:`${req.body.lastName}`,
+   email:`${req.body.email}`,
+   age : 0,
+   password:"shifre",
+   roles: "Employer"
+ }
+ let user =  new User(newUser);
+ let result = await user.save();
+ res.send(result);
 })
 
 

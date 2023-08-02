@@ -21,3 +21,10 @@ export interface IEditUser {
     lastName:string,
     email:string
 }
+
+export interface INewUser {
+    firstName:string,
+    lastName:string,
+    email:string
+    roles:string
+}

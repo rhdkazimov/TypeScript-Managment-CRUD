@@ -1,4 +1,4 @@
-.login-area{
+.login-area {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,16 +6,16 @@
   margin-top: 180px;
 }
 
-.login-inputs{
+.login-inputs {
   display: flex;
 }
 
-.css-sghohy-MuiButtonBase-root-MuiButton-root{
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
   margin-top: 10px !important;
   width: 29.5% !important;
 }
 
-.notfound{
+.notfound {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,13 +25,13 @@
   border: 2px solid black;
 }
 
-.userlist .logout{
- display: flex;
- justify-content: space-between;
- align-items: center;
+.userlist .logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.userlist .logout img{
+.userlist .logout img {
   width: 100px;
 }
 
@@ -40,8 +40,8 @@
   height: 50px !important;
 }
 
-.datas{
-  display: flex;
+.datas {
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -60,11 +60,12 @@
   font-size: 18px !important;
 }
 
-.userEmail{
+.userEmail {
   margin-left: 15px !important;
 }
 
-.userEditBox{
+.userEditBox,
+.userCreateBox {
   height: 600px;
   display: flex;
   justify-content: center;
@@ -72,17 +73,30 @@
   flex-direction: column;
 }
 
-.userEditInput {
+.userEditInput,
+.userCreateInput {
   margin-top: 20px;
-font-size: 25px;
+  font-size: 25px;
   width: 200px;
   height: 50px;
 }
 
-.userEditBtn{
+.userEditBtn,
+.userCreateBtn {
   margin-top: 30px !important;
   width: 200px;
   height: 50px;
   background-color: rgb(43, 109, 253) !important;
   color: #fff !important;
+}
+
+.newUserBtn {
+  width: 35% !important;
+  height: 60px;
+  margin-bottom: 20px !important;
+}
+
+.data-btn{
+  display: flex;
+  justify-content: center;
 }

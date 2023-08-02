@@ -4,7 +4,7 @@ import { AppRoutes } from "./routes";
 
 const queryClient = new QueryClient();
 
-export function App() {
+export function App() { 
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>

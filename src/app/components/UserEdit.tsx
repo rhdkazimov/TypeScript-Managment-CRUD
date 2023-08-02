@@ -18,31 +18,31 @@ export const UserEdit:React.FC = () => {
   const navigate = useNavigate();
   const {editUserId,setReloadPage,reloadPage} = useUser();
   const {userService} = useService();
-  const [editUserOldData,setEditUserOldData] = React.useState(initialEditUserData);
-  const [editUserNewData,setEditUserNewData] = React.useState(initialEditUserData);
+  const [editUserData,setEditUserData] = React.useState(initialEditUserData);
   const {mutateEditUserApplication}= useUser();
-  useQuery(EQueryKeys.USER_EDIT,()=>userService.getUserById(editUserId).then((data)=>setEditUserOldData(data.data.User)
-  ))
+
+  useQuery(EQueryKeys.USER_EDIT,()=>userService.getUserById(editUserId).then((data)=>setEditUserData(data.data.User)))
 
   const handleEditInputChanges = React.useCallback(
     ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => {
-        setEditUserNewData((previus) => ({ ...previus, [name]: value }));
-        console.log(editUserNewData)
-    },[editUserNewData]
+      setEditUserData((previus) => ({ ...previus, [name]: value }));
+    },[editUserData]
   );
 
   const handleSumbitEditDatas = () =>{
-    mutateEditUserApplication(editUserNewData);
+    mutateEditUserApplication(editUserData);
     setReloadPage(!reloadPage)
     navigate(ROUTES.USER.ALLDATAS)
   }
+  
 
-  return (
-    <Box className="userEditBox">
+
+    return (
+      <Box className="userEditBox">
         <h1>Edit Area</h1>
-        <Input onChange={handleEditInputChanges} name='firstName' className='userEditInput' placeholder="Please Write Name"  value={editUserOldData.firstName} />
-        <Input onChange={handleEditInputChanges} name="lastName" className='userEditInput' placeholder="Please Write SurName"  value={editUserOldData.lastName} />
-        <Input onChange={handleEditInputChanges} name="email" className='userEditInput' placeholder="Please Write email"   value={editUserOldData.email} />
+        <Input onChange={handleEditInputChanges} name='firstName' className='userEditInput' placeholder="Please Write Name"  value={editUserData.firstName} />
+        <Input onChange={handleEditInputChanges} name="lastName" className='userEditInput' placeholder="Please Write SurName"  value={editUserData.lastName} />
+        <Input onChange={handleEditInputChanges} name="email" className='userEditInput' placeholder="Please Write email"   value={editUserData.email} />
         <Button onClick={handleSumbitEditDatas} className='userEditBtn' type="submit">Edit</Button>
     </Box>
   )

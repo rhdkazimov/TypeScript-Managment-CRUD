@@ -11,7 +11,7 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes/consts";
-import { Login } from "../User/Login";
+import { Login } from "../userAuth/Login";
 import { log } from "console";
 import { useUser } from "../../hooks";
 

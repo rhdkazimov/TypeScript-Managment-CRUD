@@ -1,3 +1,4 @@
+import { IEditUser, INewUser } from "../../models";
 import { HttpClient } from "../HTTPClients";
 
 
@@ -18,8 +19,12 @@ export class UserService extends HttpClient{
         return await this.get(`delete/${id}`);
     }
 
-    async uptadeUserById(id:number|string,body:any){
+    async uptadeUserById(id:number|string,body:IEditUser){
         return await this.post(`edit/${id}`,body)
+    }
+
+    async createNewUser(body:INewUser){
+        return await this.post('user/create',body)
     }
 
 }

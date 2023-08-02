@@ -15,6 +15,10 @@ export const UserList: React.FC = () => {
       navigate(ROUTES.USER.LOGIN);
     });
   };
+
+  const handleCreateNewUser = () =>{
+     navigate(ROUTES.USER.CREATE_USER)
+  }
   
   if(reloadPage){
     window.location.reload()
@@ -31,7 +35,11 @@ export const UserList: React.FC = () => {
         </Button>
       </div>
       <div className="datas">
-        {usersDataList &&
+        <div className="data-btn">
+        <Button variant="contained" className="newUserBtn" onClick={handleCreateNewUser}>Add New User</Button>
+        </div>
+        {
+        usersDataList &&
            <BasicTable users={usersDataList}/>
         }
       </div>

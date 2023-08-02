@@ -3,6 +3,7 @@ export const ROUTES = {
         ALLDATAS : "/users",
         LOGIN : "/",
         REGISTER: "/register",
-        EDIT:"/edit"
+        EDIT:"/edit",
+        CREATE_USER:"/user/create"
     }
 }

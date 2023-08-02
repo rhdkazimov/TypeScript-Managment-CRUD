@@ -34,6 +34,20 @@ app.post("/edit/:id",(req,res)=>{
   res.json({Message:"User Updated"})
 })
 
+app.post("/user/create",(req,res)=>{
+  const NewUserData = {
+    id:`${DUsersDataList.length+1}`,
+    firstName: `${req.body.firstName}`,
+    lastName:`${req.body.lastName}`,
+    email:`${req.body.email}`,
+    age : 0,
+    password:"shifre",
+    roles: `${req.body.roles}`
+  }
+  DUsersDataList.push(NewUserData)
+  res.json({Message:"User Created"})
+})
+
 
 
 app.post("/login", (req, res) => {

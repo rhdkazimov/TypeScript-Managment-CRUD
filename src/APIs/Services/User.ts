@@ -1,12 +1,14 @@
+import { useNavigate, useNavigation } from "react-router-dom";
 import { IEditUser, INewUser } from "../../models";
 import { HttpClient } from "../HTTPClients";
+import { ROUTES } from "../../routes/consts";
 
 
 export class UserService extends HttpClient{
     constructor() {
         super("http://localhost:3001");
     }
-
+    
     async getAllUsers(){
         return await this.get(`users`);
     }
@@ -27,4 +29,7 @@ export class UserService extends HttpClient{
         return await this.post('user/create',body)
     }
 
+    async userVerify(){
+        return await this.get(`check-token`)
+    }
 }

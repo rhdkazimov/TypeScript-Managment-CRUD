@@ -4,12 +4,12 @@ import { ROUTES } from "./consts";
 import { UserAuthProvider } from "../context/UserAuthContext";
 import { Login } from "../app/userAuth/Login";
 import { UserProvider } from "../context/UsersContext";
-import { UserList } from "../app/components/UserList";
+import { UserList } from "../app/User/UserList";
 import { NotFound } from "../app/components/NotFound";
 import { ProtectedRouter } from "../app/components/ProtectedRouter";
 import { ProtectedLoginRouter } from "../app/components/ProtectedLoginRouter";
-import { UserEdit } from "../app/components/UserEdit";
-import { UserCreate } from "../app/components/UserCreate";
+import { UserEdit } from "../app/User/UserEdit";
+import { UserCreate } from "../app/User/UserCreate";
 
 export const AppRoutes: React.FC = () => {
   return (

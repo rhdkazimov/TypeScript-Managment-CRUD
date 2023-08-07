@@ -8,7 +8,8 @@ export interface IUserInfo {
     email:string,
     age? :number,
     password:string,
-    roles: EUserRoles[];
+    roles: EUserRoles[],
+    result:any;
 }
 
 

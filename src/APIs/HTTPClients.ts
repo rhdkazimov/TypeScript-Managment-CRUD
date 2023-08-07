@@ -7,18 +7,26 @@ export class HttpClient {
     }
 
     async get(endpoint:string){
-        return await axios.get(`${this.baseUrl}/${endpoint}`);
+        const token = localStorage.getItem("token");
+        const header = `Bearer ${token}`
+        return await axios.get(`${this.baseUrl}/${endpoint}`,{ headers: {"Authorization":header} });
     }
 
     async put(endpoint:string,body:any){
-        return await axios.put(`${this.baseUrl}/${endpoint}`,body);
+        const token = localStorage.getItem("token");
+        const header = `Bearer ${token}`
+        return await axios.put(`${this.baseUrl}/${endpoint}`,body,{ headers: {"Authorization":header} });
     }
 
     async post(endpoint:string,body:any){
-        return await axios.post(`${this.baseUrl}/${endpoint}`,body);
+        const token = localStorage.getItem("token");
+        const header = `Bearer ${token}`
+        return await axios.post(`${this.baseUrl}/${endpoint}`,body,{ headers: {"Authorization":header} });
     }
 
     async delete(endpoint:string){
-        return await axios.delete(`${this.baseUrl}/${endpoint}`);
+        const token = localStorage.getItem("token");
+        const header = `Bearer ${token}`
+        return await axios.delete(`${this.baseUrl}/${endpoint}`,{ headers: {"Authorization":header} });
     }
 } 

@@ -6,7 +6,7 @@ export enum EUserRoles {
 
 export enum EQueryKeys {
     GetAllUsers = "getAllUsers",
-    UserLogOut = "logout",
+    User_LogOut = "logout",
     USER_DELETE = "deleteUserById",
     USER_EDIT = "editUserById",
 }

@@ -18,11 +18,13 @@ export class UserAuthService extends HttpClient{
         }
         )
     }
-
+    
+    // async userVerify(){
+    //     return await this.get(`check-token`)
+    // }
 
     async logout() {
-        return await this.get('/logout').then(()=>{
-            localStorage.clear();
-        })
+        return await this.get('logout')
+        // .then(()=>localStorage.clear())
     }
 } 
